@@ -5,23 +5,22 @@ spring:
   application:
     name: auth-service
 
+  datasource:
+    url: jdbc:postgresql://localhost:5433/myappdb
+    username: postgres
+    password: 98108
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 jwt:
   secret: $2a$12$bBx3ARAjxpE6iMXVrb0UMescipH2OY7O1vo/lB1wHzS4mFl8DauW2
-
-expiration: 86400000
-                - spring:
-                datasource:
-                  url: jdbc:postgresql://localhost:5433/myappdb
-                  username: postgres
-                  password: 98108
-                jpa:
-                  hibernate:
-                    ddl-auto: update
-                  show-sql: true
-                  properties:
-                    hibernate:
-                      dialect: org.hibernate.dialect.PostgreSQLDialect
-
+  expiration: 86400000
 
 eureka:
   client:
